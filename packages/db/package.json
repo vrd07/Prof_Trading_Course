@@ -9,9 +9,11 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@trading-course/types": "workspace:*",
     "@supabase/supabase-js": "^2"
   },
   "devDependencies": {
+    "@types/node": "^20",
     "typescript": "^5"
   }
 }
