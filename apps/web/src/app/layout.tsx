@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono, Syne } from 'next/font/google'
 import './globals.css'
 
+import { TopNav } from '@/components/nav/TopNav'
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const syne = Syne({ subsets: ['latin'], variable: '--font-display' })
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -21,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${syne.variable} ${jetBrainsMono.variable} antialiased`}
       >
+        <TopNav />
         {children}
       </body>
     </html>

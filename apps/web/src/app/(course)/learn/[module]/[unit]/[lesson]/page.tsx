@@ -1,4 +1,4 @@
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { compileMDX } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 
 import { LessonHeader } from '@/components/lessons/LessonHeader'
@@ -9,6 +9,8 @@ import { LessonSidebarClient } from '@/components/lessons/LessonSidebarClient'
 import { getLessonList, getModuleMeta, getUnitMeta } from '@/lib/content/course'
 import { mdxComponents } from '@/lib/mdx/components'
 import { getAllLessonPaths, getLessonContent } from '@/lib/mdx/loader'
+
+export const dynamic = 'force-dynamic'
 
 interface LessonPageProps {
   params: { module: string; unit: string; lesson: string }
@@ -25,6 +27,10 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   const { frontmatter, mdxSource, toc } = data
   const sidebarTitle = `${moduleMeta?.slug ?? params.module} · Unit ${unitMeta?.order ?? ''}`.trim()
+  const { content } = await compileMDX({
+    source: mdxSource,
+    components: mdxComponents,
+  })
 
   return (
     <div className="flex min-h-screen">
@@ -47,7 +53,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
           />
           <LessonHeader frontmatter={frontmatter} />
           <article className="prose prose-invert prose-lg mt-8 max-w-none">
-            <MDXRemote source={mdxSource} components={mdxComponents} />
+            {content}
           </article>
           <div className="mt-12">
             <LessonNavigation frontmatter={frontmatter} module={params.module} unit={params.unit} />
@@ -58,9 +64,5 @@ export default async function LessonPage({ params }: LessonPageProps) {
       </main>
     </div>
   )
-}
-
-export async function generateStaticParams() {
-  return getAllLessonPaths()
 }
 

@@ -35,11 +35,11 @@ interface QuizSubmitResponse {
 
 export function QuizBlock({
   lessonId,
-  questionIds,
+  questionIds = [],
   passingScore = 4,
 }: {
   lessonId: string
-  questionIds: string[]
+  questionIds?: string[]
   passingScore?: number
 }) {
   const markComplete = useProgressStore((s) => s.markComplete)
@@ -52,7 +52,7 @@ export function QuizBlock({
   const [submitted, setSubmitted] = useState<QuizSubmitResponse | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
-  const expectedCount = questionIds.length
+  const expectedCount = questionIds?.length ?? 0
 
   useEffect(() => {
     let cancelled = false

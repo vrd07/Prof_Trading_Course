@@ -2,9 +2,6 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import matter from 'gray-matter'
-import remarkGfm from 'remark-gfm'
-import rehypePrettyCode from 'rehype-pretty-code'
-import { serialize } from 'next-mdx-remote/serialize'
 import { extractTocFromMdx, type TocItem } from './toc'
 
 export interface LessonFrontmatter {
@@ -43,21 +40,9 @@ export async function getLessonContent(moduleSlug: string, unitSlug: string, les
   const parsed = matter(raw)
   const toc = extractTocFromMdx(parsed.content)
 
-  const mdxSource = await serialize(parsed.content, {
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [
-        [
-          rehypePrettyCode,
-          {
-            theme: 'github-dark',
-          },
-        ],
-      ],
-    },
-  })
-
-  return { frontmatter: parsed.data as LessonFrontmatter, mdxSource, toc }
+  // For App Router, `next-mdx-remote/rsc` compiles MDX from a string at render time.
+  // We keep mdxOptions co-located with the renderer (see lesson page).
+  return { frontmatter: parsed.data as LessonFrontmatter, mdxSource: parsed.content, toc }
 }
 
 export async function getAllLessonPaths() {
