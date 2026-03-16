@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@supabase/auth-helpers-nextjs": "^0.15.0",
+    "@supabase/supabase-js": "^2",
     "@trading-course/db": "workspace:^",
     "@trading-course/types": "workspace:^",
     "@trading-course/ui": "workspace:^",
@@ -17,8 +20,10 @@
     "next-mdx-remote": "^6.0.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+    "react-hook-form": "^7.71.2",
     "rehype-pretty-code": "^0.14.3",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/node": "^20",
