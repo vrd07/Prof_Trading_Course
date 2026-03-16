@@ -155,6 +155,126 @@
           "explanation": "Cost + slippage + tail risk makes them unforgiving during learning."
         }
       ]
+    },
+    "1.4": {
+      "lessonId": "1.4",
+      "questions": [
+        {
+          "questionKey": "1.4.q1",
+          "questionText": "In a typical Forex quote, the BID price is the price at which you:",
+          "options": [
+            "Buy the base currency",
+            "Sell the base currency",
+            "Always enter long positions",
+            "Always exit short positions"
+          ],
+          "correctIndex": 1,
+          "explanation": "You sell at BID and buy at ASK. BID is what the market pays you for the base currency."
+        },
+        {
+          "questionKey": "1.4.q2",
+          "questionText": "The spread is best defined as:",
+          "options": [
+            "The distance between today’s high and low",
+            "The difference between ASK and BID",
+            "The broker’s swap/overnight fee",
+            "A fixed commission charged per trade"
+          ],
+          "correctIndex": 1,
+          "explanation": "Spread = Ask − Bid. It’s the built-in cost you pay when entering a trade."
+        },
+        {
+          "questionKey": "1.4.q3",
+          "questionText": "EUR/USD is quoted 1.0848 / 1.0851. What is the spread in pips (majors, 1 pip = 0.0001)?",
+          "options": ["0.3 pips", "3 pips", "30 pips", "300 pips"],
+          "correctIndex": 1,
+          "explanation": "1.0851 − 1.0848 = 0.0003 = 3 pips on most majors."
+        },
+        {
+          "questionKey": "1.4.q4",
+          "questionText": "Why do spreads often widen during major news events?",
+          "options": [
+            "Because brokers are required to widen spreads by law",
+            "Because liquidity drops and risk increases, so pricing becomes less certain",
+            "Because pip size changes temporarily",
+            "Because the market becomes centralized on an exchange"
+          ],
+          "correctIndex": 1,
+          "explanation": "During news, liquidity can vanish and volatility spikes; market makers protect themselves by widening spreads."
+        },
+        {
+          "questionKey": "1.4.q5",
+          "questionText": "A strategy targeting very small profits per trade (e.g., 5–10 pips) is most harmed by:",
+          "options": [
+            "A small, stable spread",
+            "A wide spread relative to the target",
+            "Long-term interest rates",
+            "Trading only major pairs"
+          ],
+          "correctIndex": 1,
+          "explanation": "If your target is small, the spread can consume most of the move and destroy expectancy."
+        }
+      ]
+    },
+    "1.5": {
+      "lessonId": "1.5",
+      "questions": [
+        {
+          "questionKey": "1.5.q1",
+          "questionText": "Which session overlap is commonly the most liquid and volatile for many major pairs?",
+          "options": [
+            "Sydney–Tokyo overlap",
+            "Tokyo–London overlap",
+            "London–New York overlap",
+            "New York–Sydney overlap"
+          ],
+          "correctIndex": 2,
+          "explanation": "London–New York overlap concentrates the most institutional participation and volume."
+        },
+        {
+          "questionKey": "1.5.q2",
+          "questionText": "Forex being open 24 hours a day means:",
+          "options": [
+            "Price action quality is the same all day",
+            "Liquidity and volatility are constant",
+            "The market always has the same spread",
+            "The market has a rhythm; sessions change liquidity and movement"
+          ],
+          "correctIndex": 3,
+          "explanation": "Sessions matter: different regions open/close, changing liquidity, spreads, and volatility."
+        },
+        {
+          "questionKey": "1.5.q3",
+          "questionText": "During the Tokyo (Asian) session, which pairs often see increased activity?",
+          "options": ["EUR/GBP and EUR/CHF", "GBP/USD and EUR/USD", "USD/JPY and AUD pairs", "Exotics only"],
+          "correctIndex": 2,
+          "explanation": "JPY and AUD pairs commonly see more participation during Asia hours."
+        },
+        {
+          "questionKey": "1.5.q4",
+          "questionText": "Quiet handover periods (late NY into early Sydney) are often characterized by:",
+          "options": [
+            "Deep liquidity and tight spreads",
+            "Choppy price action and sometimes wider spreads",
+            "Guaranteed trends",
+            "Only central-bank trading"
+          ],
+          "correctIndex": 1,
+          "explanation": "Lower participation can lead to choppier moves and less favorable spreads."
+        },
+        {
+          "questionKey": "1.5.q5",
+          "questionText": "The best way to choose when to trade is to:",
+          "options": [
+            "Trade every session to maximize opportunities",
+            "Only trade the session with the highest volatility, always",
+            "Match sessions to your strategy, pairs, and personal schedule",
+            "Avoid overlaps because they move too fast"
+          ],
+          "correctIndex": 2,
+          "explanation": "You design your trading schedule around sessions that fit your life and your strategy’s needs."
+        }
+      ]
     }
   }
 }

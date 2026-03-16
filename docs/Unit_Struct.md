@@ -1006,4 +1006,589 @@ EUR/JPY = 162.40
 ---
 
 
+# 📝 LESSON 1.4 — The Bid, Ask & Spread
+
+**Unit 1 | Beginner Module | Free Tier | Est. time: 9 mins**
+
+---
+
+## 🎯 Learning Objectives
+
+*By the end of this lesson, the student will be able to:*
+- Clearly define **bid**, **ask**, and **spread**
+- Explain how brokers get paid on every trade (even when you “pay no commission”)
+- Calculate the spread cost in **pips** and **money** for a given trade size
+- Understand why tight spreads and market conditions matter for their strategy
+
+---
+
+## 📖 LESSON CONTENT
+
+---
+
+### SECTION 1 — Two Prices for Every Pair
+
+When you first open a Forex quote window, it looks deceptively simple — you see one pair and two numbers.
+
+Example:
+
+```
+EUR/USD   1.0848   1.0851
+            BID     ASK
+```
+
+Most beginners glance at this and think, “Ok, EUR/USD is around 1.0850.”  
+That’s not wrong — but it completely misses the mechanic that matters for your bottom line.
+
+There are **always two prices**:
+
+- The **bid** — what the market is willing to **buy** the base currency for
+- The **ask** — what the market is willing to **sell** the base currency for
+
+You don’t get to choose. You interact with whichever side matches your action:
+
+- When you **sell** EUR/USD, you hit the **bid**
+- When you **buy** EUR/USD, you pay the **ask**
+
+That small gap between the two is the **spread** — and it is the hidden tollbooth you pass every time you enter a trade.
+
+---
+
+### SECTION 2 — What Exactly Is the Spread?
+
+Let’s zoom in on the previous quote:
+
+```
+EUR/USD    1.0848 / 1.0851
+               ↑       ↑
+              BID     ASK
+```
+
+- **BID (1.0848)** — if you sell 1 EUR, you receive 1.0848 USD
+- **ASK (1.0851)** — if you buy 1 EUR, you pay 1.0851 USD
+
+The **spread** is simply:
+
+\[
+\text{Spread} = \text{ASK} - \text{BID} = 1.0851 - 1.0848 = 0.0003
+\]
+
+In Forex, that 0.0003 is expressed in **pips**:
+
+- For most pairs, 1 pip = 0.0001
+- So 0.0003 = **3 pips**
+
+That 3-pip gap is how the broker gets paid on “zero-commission” trading.  
+You start every trade **a few pips in the red** the moment you enter.
+
+---
+
+### 🎬 ANIMATION CHECKPOINT 1
+*"The Spread Visualiser"*
+
+> **What the animation shows:**
+> A horizontal price axis for EUR/USD with two vertical lines: the left line labelled “Bid 1.0848”, the right line labelled “Ask 1.0851”. The area between them is shaded in red and labelled “Spread: 3 pips”. A marker representing “Your trade” jumps first onto the ask line when you buy, showing an immediate small unrealised loss. As price moves to the right, the marker crosses the bid line and the P/L counter flips from red to green — visually reinforcing the idea that you have to travel the spread before you even get back to breakeven.
+>
+> **Student takeaway:**
+> Every trade starts negative by the amount of the spread. Smaller spreads mean less distance to breakeven.
+
+---
+
+### SECTION 3 — How the Spread Becomes Real Money
+
+Pips are useful for thinking in relative terms. But your broker does not collect “pips” — they collect **money**.
+
+To see how the spread hits your account, you need three ingredients:
+
+1. **Spread in pips**
+2. **Pip value** for the pair you’re trading
+3. **Number of lots** you’re trading
+
+For major USD-quoted pairs (like EUR/USD) at 1 standard lot (100,000 units), one pip is typically **$10**.
+
+So in our 3-pip spread example:
+
+- Spread = 3 pips
+- Pip value ≈ $10 per pip (for 1 standard lot)
+- Cost = 3 × $10 = **$30**
+
+You pay that **every time** you open a 1-lot trade in those conditions — whether you later win or lose.
+
+For a mini lot (0.1 lot = 10,000 units), pip value ≈ $1:
+
+- Spread cost ≈ **$3** per trade at 3 pips.
+
+The key insight: **spreads scale with your position size**.  
+The larger you trade, the more every pip of spread matters.
+
+---
+
+### SECTION 4 — Why Spreads Change (and When They Hurt You)
+
+Spreads are not static. They widen and tighten depending on:
+
+- **Market liquidity** — more participants = tighter spreads
+- **Time of day** — session overlaps (London + New York) are usually tightest
+- **News events** — during high-impact news, many brokers widen spreads dramatically
+- **Pair type** — majors usually have the tightest spreads; exotics the widest
+
+Examples:
+
+- EUR/USD during London–New York overlap: 0.5–1.5 pips typical spread
+- GBP/JPY outside major sessions: 3–6 pips or more
+- USD/TRY around political events: 20+ pips spread is not unusual
+
+For a scalper aiming for 5–10 pips profit, a 4-pip spread is lethal — almost the entire move goes to the broker. For a swing trader targeting 150 pips, a 2–3 pip spread is acceptable friction.
+
+---
+
+### 🎬 ANIMATION CHECKPOINT 2
+*"Tight vs Wide Spreads"*
+
+> **What the animation shows:**
+> Two side-by-side panels. On the left, a tight-spread pair (EUR/USD) with bid/ask almost on top of each other; the red shaded spread area is very thin. On the right, an exotic pair (USD/TRY) with a wide shaded band between bid and ask. The same position size is applied to both. A pip value calculator at the bottom shows the dollar cost of the spread for each. As the student scrubs a slider labelled “Lot Size”, the cost scales in both panels, clearly illustrating how wide spreads + large size multiply costs.
+>
+> **Student takeaway:**
+> Tight spreads on liquid pairs keep your cost per trade manageable; wide spreads on exotics and illiquid times can silently eat your edge.
+
+---
+
+### SECTION 5 — Spread vs Commission (and Which Brokers Use Which)
+
+Most Forex brokers use one of two pricing models:
+
+- **Spread-only** — you pay via wider spreads, advertised as “no commission”
+- **Raw spread + commission** — spreads close to interbank pricing, plus a fixed commission per lot
+
+Neither model is inherently “better”; it depends on:
+
+- Your average trade size
+- Number of trades you take per day/week
+- Whether you scalp or swing
+
+For small accounts and low trade frequency, spread-only with tight majors is usually fine. As your account size and frequency grow, raw-spread + commission often becomes cheaper overall.
+
+The important part is that you:
+
+1. **Know which model your broker uses**
+2. **Factor that cost into your strategy**
+
+---
+
+### SECTION 6 — Putting It All Together in an Example
+
+Imagine you:
+
+- Trade **EUR/USD**
+- Use a **0.5 lot** position size (50,000 units)
+- Your broker’s spread is **1.5 pips** during London session
+
+For EUR/USD at 0.5 lots:
+
+- Pip value ≈ $5 per pip
+- Spread cost = 1.5 pips × $5 ≈ **$7.50** per trade
+
+If your average winning trade makes 30 pips ($150) and your average losing trade loses 15 pips ($75), that $7.50 friction is acceptable — but it’s still there on every single trade.
+
+You’ll build a proper position sizing and expectancy calculator later in the course. For now, the key idea is simple:
+
+> **Spread is not an abstract concept. It is real money leaving your account the moment you click “buy” or “sell.”**
+
+---
+
+## ✅ KEY TAKEAWAYS
+
+- Every quote has **two prices**: **bid** (sell into) and **ask** (buy at)
+- The **spread** is the difference between bid and ask — expressed in **pips**
+- Spread is how your broker gets paid on “commission-free” trading
+- Spread cost scales with **position size** and **pair choice**
+- Tight spreads on majors are more forgiving; wide spreads on exotics are expensive and risky
+- You start every trade in a small loss equal to the spread — your strategy must overcome this friction
+
+---
+
+## 🧩 INTERACTIVE EXERCISE — "Count the Cost"
+
+*Type: Numeric input + instant feedback. Difficulty: Easy-Medium. Estimated time: 4 mins.*
+
+**Instructions to student:**
+> "You will see five trade scenarios — each with pair, spread, and lot size. For each one, calculate the spread cost in your account currency before you click 'Check'."
+
+Scenarios include:
+
+1. EUR/USD, 1.2 pip spread, 0.1 lot
+2. EUR/USD, 2.5 pip spread, 1.0 lot
+3. GBP/JPY, 3.0 pip spread, 0.5 lot
+4. USD/TRY, 20 pip spread, 0.2 lot
+5. EUR/USD, 1.0 pip spread, 2.0 lots
+
+Each answer reveals:
+
+- Whether the student was correct
+- The step-by-step calculation
+- A short note on whether that cost is acceptable for different strategy types
+
+---
+
+## 🧠 QUIZ — Lesson 1.4
+
+*5 questions. Must score 4/5 to unlock next lesson.*
+
+---
+
+**Q1.** In a quote like EUR/USD 1.0848 / 1.0852, what is the spread?
+
+- A) 0.0002 (2 pips)  
+- B) ✅ 0.0004 (4 pips)  
+- C) 0.0040 (40 pips)  
+- D) 0.0400 (400 pips)
+
+*Feedback if wrong:* "The spread is simply ask minus bid: 1.0852 − 1.0848 = 0.0004, which is 4 pips when the pip is the 4th decimal place."
+
+---
+
+**Q2.** On EUR/USD, trading 1 standard lot, approximately how much is 1 pip worth?
+
+- A) $1  
+- B) ✅ $10  
+- C) $100  
+- D) $1000
+
+*Feedback if wrong:* "On most USD-quoted majors, 1 pip at 1 standard lot (100,000 units) is about $10. At 0.1 lots it’s about $1."
+
+---
+
+**Q3.** If the spread on GBP/JPY is 3 pips and you trade 0.5 lots, what happens when you open a trade?
+
+- A) You start roughly breakeven; spread doesn’t matter  
+- B) You instantly lose the full account risk  
+- C) ✅ You start with a small unrealised loss equal to ~3 pips × pip value for 0.5 lots  
+- D) The broker only charges spread when you close the trade
+
+*Feedback if wrong:* "You pay the spread at entry — your position starts negative by the cost of the spread in money terms. You then need price to move through that gap before you’re at breakeven."
+
+---
+
+**Q4.** Which combination is likely to have the **widest** spread?
+
+- A) EUR/USD during London–New York overlap  
+- B) ✅ USD/TRY during a political event  
+- C) EUR/USD during normal hours  
+- D) USD/JPY during Tokyo session
+
+*Feedback if wrong:* "Emerging market exotics like USD/TRY widen dramatically around political or macro shocks. Majors like EUR/USD tend to stay tightest during liquid sessions."
+
+---
+
+**Q5.** Why is spread especially dangerous for short-term scalping strategies?
+
+- A) Scalpers only trade exotics, which are always wide  
+- B) Regulators ban scalping if spreads are tight  
+- C) ✅ Target profits are small, so a few pips of spread can consume most of the move  
+- D) Spreads double every time you scalp
+
+*Feedback if wrong:* "When your profit target is only 5–10 pips, paying 2–4 pips in spread means most of the move goes to the broker. Longer-term trades can absorb this friction more easily."
+
+---
+
+## 🎓 LESSON COMPLETE — Progress Unlocked
+
+> ✅ Lesson 1.4 Complete  
+> ⭐ Quiz Score: [X/5]  
+> ➡️ Next: **Lesson 1.5 — Forex Market Sessions**
+
+**Completion message to student:**
+*"You now see the hidden cost baked into every trade — bid, ask, and spread are no longer mysterious numbers on a ticket. You can quantify exactly what each trade costs you in pips and dollars. In Lesson 1.5, you’ll learn when the market is actually worth paying that cost — by understanding which sessions are truly alive and which are just noise."*
+
+---
+
+## 📌 ANIMATION STORYBOARD SUMMARY — Lesson 1.4
+
+| Animation ID | Name | Type | Key Elements | Trigger |
+|---|---|---|---|---|
+| A1.4.1 | The Spread Visualiser | Horizontal price bar | Bid/ask lines, shaded spread, breakeven crossing | Auto-plays on section scroll |
+| A1.4.2 | Tight vs Wide Spreads | Split-screen comparison | Major vs exotic spreads, cost scaling with lot size | Student scrubs “Lot Size” slider |
+
+---
+
+
+# 📝 LESSON 1.5 — Forex Market Sessions
+
+**Unit 1 | Beginner Module | Free Tier | Est. time: 10 mins**
+
+---
+
+## 🎯 Learning Objectives
+
+*By the end of this lesson, the student will be able to:*
+- Name the four major Forex sessions and their approximate trading hours
+- Explain what **session overlaps** are and why they matter
+- Understand how volatility and liquidity change across the 24-hour cycle
+- Identify which sessions best match their own schedule and chosen strategies
+
+---
+
+## 📖 LESSON CONTENT
+
+---
+
+### SECTION 1 — A 24-Hour Market (That Still Has a Rhythm)
+
+One of Forex’s biggest attractions is that it trades 24 hours a day, 5 days a week. But “always open” does **not** mean “always worth trading.”
+
+Price moves most when:
+
+- Major financial centres are open
+- Deep liquidity is available
+- Institutions are actively transacting
+
+To understand when that happens, you need to know the **sessions** — the periods when each major region’s markets are open and active.
+
+The four core sessions are:
+
+- **Sydney** (Oceania)
+- **Tokyo** (Asia)
+- **London** (Europe)
+- **New York** (North America)
+
+Together, they create a rolling wave of liquidity around the globe.
+
+---
+
+### SECTION 2 — The Four Major Sessions (in UTC)
+
+To avoid time zone chaos, we describe sessions in **UTC**. Your local time will differ — and your trading platform will usually show its own server time — but the structure remains the same.
+
+Approximate session times (in UTC):
+
+- **Sydney**: 22:00 – 07:00  
+- **Tokyo**: 00:00 – 09:00  
+- **London**: 07:00 – 16:00  
+- **New York**: 12:00 – 21:00  
+
+The key thing to notice is the **overlaps**:
+
+- London + New York overlap for **4 hours** (12:00 – 16:00 UTC)
+- Asia overlaps briefly with Europe as London opens
+
+These overlaps are when:
+
+- Liquidity is deepest  
+- Spreads are tightest  
+- Intraday volatility is highest  
+
+Which is exactly what short-term traders want.
+
+---
+
+### 🎬 ANIMATION CHECKPOINT 1
+*"The 24-Hour Session Clock"*
+
+> **What the animation shows:**
+> A dark circular 24-hour clock with four coloured arcs representing each major session. A glowing dot sweeps around the clock to show time progressing from Sunday open to Friday close. As it passes through each coloured arc, that session label lights up and an overlay appears showing typical volatility and volume for EUR/USD, GBP/JPY, and AUD/USD. The London–New York overlap is highlighted with a bright band and an animated “volume” bar surging higher.
+>
+> **Student takeaway:**
+> Forex is technically open 24/5, but the market has distinct “awake” and “asleep” periods tied to regional sessions and overlaps.
+
+---
+
+### SECTION 3 — What Tends to Move During Each Session
+
+Each session has its own personality:
+
+- **Sydney / Early Asian**
+  - Quietest part of the day
+  - Good for planning and reviewing, not usually for aggressive entries
+
+- **Tokyo / Asian Session**
+  - More active in JPY and AUD pairs (e.g., USD/JPY, AUD/JPY, AUD/USD)
+  - Often sets the early range for the day
+
+- **London Session**
+  - The single most important session for many traders
+  - High volume, tight spreads, especially in EUR and GBP pairs
+  - Many major economic releases for Europe and the UK
+
+- **New York Session**
+  - Strong in USD pairs
+  - Overlaps with London early on — often the highest volume period of the entire day
+  - US economic releases (NFP, CPI, FOMC) can cause violent moves
+
+Understanding which pairs are most active in which session helps you:
+
+- Avoid trading a dead market
+- Choose the right pairs for your available hours
+
+---
+
+### SECTION 4 — Session Overlaps: Where Energy Concentrates
+
+The **London–New York overlap** (roughly 12:00–16:00 UTC) is the market’s equivalent of rush hour:
+
+- Both European and US institutions are active
+- Order books are deep
+- Intraday trends often begin or accelerate
+
+For intraday strategies, this window is prime time:
+
+- Breakouts have more follow-through
+- Pullbacks often resolve decisively
+- Spreads on majors hit their tightest point
+
+By contrast, late New York into early Asia often produces:
+
+- Reduced volume
+- Messy, choppy moves
+- Wider spreads — especially on cross and exotic pairs
+
+---
+
+### 🎬 ANIMATION CHECKPOINT 2
+*"Overlap Energy"*
+
+> **What the animation shows:**
+> A horizontal timeline of the 24-hour day with coloured bands for each session. As the animation plays, volume bars grow and shrink under the curve. The London–New York overlap region pulses brightly, with candlestick charts above it showing clean, directional moves. In contrast, isolated Asian or late US hours show thinner volume and more sideways, choppy price action.
+>
+> **Student takeaway:**
+> Not all hours are equal. Overlaps, especially London–New York, offer the best combination of liquidity and movement.
+
+---
+
+### SECTION 5 — Matching Sessions to Your Life (and Strategy)
+
+You are not a full-time bank trader sitting in London with a 24/7 desk. You have **life constraints** — a job, family, geography.
+
+Rather than fighting that reality, you design your trading around it.
+
+Examples:
+
+- If you live in **Europe** and work a 9–5:
+  - Early-morning pre-work window overlaps with the **London open**
+  - You might focus on EUR/USD, GBP/USD, and EUR/GBP
+
+- If you live in **Asia**:
+  - After-dinner window overlaps with Tokyo session
+  - AUD/JPY, AUD/USD, and USD/JPY may fit better
+
+- If you live in **North America**:
+  - Morning before work can catch the last part of London and start of New York
+  - US lunch break often overlaps the mid-New York session
+
+In later units, you’ll decide:
+
+- Which **pairs** you specialise in
+- Which **sessions** you commit to trading
+- Which **days** and **times** you deliberately stand aside (e.g., major news spikes if your edge doesn’t require them)
+
+For now, the goal is simple: start thinking of time windows as part of your edge — not an afterthought.
+
+---
+
+## ✅ KEY TAKEAWAYS
+
+- Forex trades 24 hours a day, 5 days a week — but liquidity and volatility are **not** evenly distributed
+- The four major sessions are **Sydney, Tokyo, London, and New York**
+- **Session overlaps**, especially London–New York, concentrate volume and movement
+- Different pairs are most active in different sessions (e.g., JPY/AUD in Asia, EUR/GBP in London, USD majors in New York)
+- Your edge must respect your **available hours**; you choose sessions that align with both your strategy and your life
+
+---
+
+## 🧩 INTERACTIVE EXERCISE — "Session Matchmaker"
+
+*Type: Matching + scenario planning. Difficulty: Easy-Medium. Estimated time: 5 mins.*
+
+**Instructions to student:**
+> "You will see three fictional traders with different time zones, work schedules, and preferred pairs. For each, choose the session(s) that make the most sense for their trading. Then design a simple weekly schedule with checkboxes for when they trade and when they explicitly do not trade."
+
+Each scenario reinforces:
+
+- Time zone conversion
+- Session personality
+- The idea of deliberate, scheduled participation
+
+---
+
+## 🧠 QUIZ — Lesson 1.5
+
+*5 questions. Must score 4/5 to unlock Unit 1 summary.*
+
+---
+
+**Q1.** Which two sessions create the most important overlap for intraday traders?
+
+- A) Sydney–Tokyo  
+- B) Tokyo–London  
+- C) ✅ London–New York  
+- D) New York–Sydney
+
+*Feedback if wrong:* "While all overlaps matter, the London–New York overlap concentrates the most global liquidity and moves major pairs the most."
+
+---
+
+**Q2.** During which session are EUR and GBP pairs typically most active?
+
+- A) Sydney  
+- B) ✅ London  
+- C) Tokyo  
+- D) New York close
+
+*Feedback if wrong:* "London is the primary session for European currencies — EUR and GBP are most liquid and most actively traded during European hours."
+
+---
+
+**Q3.** A trader in Tokyo who wants to focus on AUD/JPY and AUD/USD will naturally be most aligned with which session?
+
+- A) London  
+- B) New York  
+- C) ✅ Tokyo / Asian session  
+- D) Only during session overlaps
+
+*Feedback if wrong:* "AUD and JPY flows are most pronounced during the Asian session, when regional news and order flow dominate."
+
+---
+
+**Q4.** Why are late New York and early Sydney often poor times for aggressive intraday trading?
+
+- A) Brokers are closed  
+- B) ✅ Liquidity is thin and price can be choppy with wider spreads  
+- C) Economic releases always happen then  
+- D) Forex is closed on Tuesdays during that window
+
+*Feedback if wrong:* "The quiet handover between New York close and early Sydney often produces low-volume, choppy moves and wider spreads — not ideal for precise entries."
+
+---
+
+**Q5.** Which of the following is the **best** way to think about sessions as a retail trader?
+
+- A) “It doesn’t matter when I trade; price is random anyway”  
+- B) “I should try to trade every session so I never miss a move”  
+- C) ✅ “I pick 1–2 sessions that align with my lifestyle and strategy, and I only trade then”  
+- D) “I only trade when the market is completely quiet”
+
+*Feedback if wrong:* "Consistency and focus beat constant screen time. You design your trading around specific sessions that suit both your edge and your life."
+
+---
+
+## 🎓 LESSON COMPLETE — Unit 1 Sessions Mastered
+
+> ✅ Lesson 1.5 Complete  
+> ⭐ Quiz Score: [X/5]  
+> ➡️ Next: **Unit 1 Summary & Onward Path**
+
+**Completion message to student:**
+*"You now understand not just what Forex is and how quotes work, but when the market truly comes alive. You know which sessions move which pairs, when spreads tighten, and how to align trading with your own schedule. From here, we’ll build on this foundation by teaching you how to actually read the candles and patterns those sessions produce."*
+
+---
+
+## 📌 ANIMATION STORYBOARD SUMMARY — Lesson 1.5
+
+| Animation ID | Name | Type | Key Elements | Trigger |
+|---|---|---|---|---|
+| A1.5.1 | The 24-Hour Session Clock | Circular clock | Session arcs, moving time dot, volatility overlays | Auto-plays on section load |
+| A1.5.2 | Overlap Energy | Timeline graph | Volume curve, highlighted overlap, comparative candlestick behaviour | Auto-plays on scroll |
+
+---
+
+
 

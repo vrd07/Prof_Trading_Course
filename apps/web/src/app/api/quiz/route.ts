@@ -1,29 +1,11 @@
-import fs from 'node:fs/promises'
-import path from 'node:path'
-
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
+
+import { createServerClient } from '@/lib/supabase/server'
 
 const querySchema = z.object({
   lessonId: z.string().regex(/^\d+\.\d+$/),
 })
-
-type QuizDb = {
-  passingScore: number
-  lessons: Record<
-    string,
-    {
-      lessonId: string
-      questions: Array<{
-        questionKey: string
-        questionText: string
-        options: string[]
-        correctIndex: number
-        explanation: string
-      }>
-    }
-  >
-}
 
 export async function GET(req: Request) {
   try {
@@ -31,26 +13,38 @@ export async function GET(req: Request) {
     const lessonId = url.searchParams.get('lessonId') ?? ''
     const parsed = querySchema.parse({ lessonId })
 
-    const filePath = path.join(process.cwd(), '..', '..', '..', 'content', 'quizzes', 'beginner.unit-1.json')
-    const raw = await fs.readFile(filePath, 'utf8')
-    const db = JSON.parse(raw) as QuizDb
+    const supabase = createServerClient()
 
-    const lesson = db.lessons[parsed.lessonId]
-    if (!lesson) {
+    const { data, error } = await supabase
+      .from('quiz_questions')
+      .select('question_key, question_text, options, order')
+      .eq('lesson_id', parsed.lessonId)
+      .order('order', { ascending: true })
+
+    const questions =
+      (data as { question_key: string; question_text: string; options: string[]; order: number | null }[] | null) ??
+      null
+
+    if (error) {
+      return NextResponse.json({ error: 'Failed to load questions' }, { status: 500 })
+    }
+
+    if (!questions || questions.length === 0) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 })
     }
 
     return NextResponse.json({
       lessonId: parsed.lessonId,
-      questions: lesson.questions.map((q, idx) => ({
+      questions: questions.map((q, idx) => ({
         id: `${parsed.lessonId}.${idx + 1}`,
-        questionKey: q.questionKey,
-        questionText: q.questionText,
-        options: q.options,
-        order: idx + 1,
+        questionKey: q.question_key,
+        questionText: q.question_text,
+        options: q.options as string[],
+        order: q.order ?? idx + 1,
       })),
-      passingScore: db.passingScore,
-      totalQuestions: lesson.questions.length,
+      // Business rule from docs: pass threshold is 4/5
+      passingScore: 4,
+      totalQuestions: questions.length,
     })
   } catch (error) {
     if (error instanceof z.ZodError) {

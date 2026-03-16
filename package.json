@@ -8,7 +8,8 @@
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "format": "prettier . --check",
-    "format:write": "prettier . --write"
+    "format:write": "prettier . --write",
+    "seed": "pnpm --filter @trading-course/db run seed"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
