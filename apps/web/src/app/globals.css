@@ -2,11 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal tokens; expand per docs/design_system.md */
+/* Design tokens (subset) from docs/design_system.md */
 :root {
   --background: 222 47% 6%;
-  --foreground: 210 40% 92%;
+  --background-subtle: 222 40% 8%;
+  --background-muted: 222 35% 11%;
+
   --border: 215 28% 14%;
+
+  --foreground: 210 40% 92%;
+
+  --primary: 213 94% 62%;
+  --success: 158 64% 52%;
+  --warning: 38 92% 50%;
+  --destructive: 0 84% 60%;
+  --orange: 25 95% 53%;
 }
 
 body {

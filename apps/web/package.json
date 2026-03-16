@@ -12,9 +12,13 @@
     "@trading-course/db": "workspace:^",
     "@trading-course/types": "workspace:^",
     "@trading-course/ui": "workspace:^",
+    "gray-matter": "^4.0.3",
     "next": "^14.2.0",
+    "next-mdx-remote": "^6.0.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "rehype-pretty-code": "^0.14.3",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",
