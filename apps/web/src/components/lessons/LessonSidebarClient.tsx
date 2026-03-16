@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+import { useCompletedLessons } from '@/lib/progress/useCompletedLessons'
 import { useProgressStore } from '@/store/useProgressStore'
 
 export function LessonSidebarClient({
@@ -17,7 +18,10 @@ export function LessonSidebarClient({
   unit: string
   currentLesson: string
 }) {
-  const isComplete = useProgressStore((s) => s.isComplete)
+  const localIsComplete = useProgressStore((s) => s.isComplete)
+  const serverCompleted = useCompletedLessons()
+
+  const isComplete = (lessonId: string) => localIsComplete(lessonId) || serverCompleted.has(lessonId)
 
   return (
     <aside className="hidden w-[280px] flex-shrink-0 border-r border-border bg-background-subtle lg:block">

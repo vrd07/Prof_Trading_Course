@@ -3,6 +3,7 @@
 import Link from 'next/link'
 
 import type { LessonFrontmatter } from '@/lib/mdx/loader'
+import { useCompletedLessons } from '@/lib/progress/useCompletedLessons'
 import { useProgressStore } from '@/store/useProgressStore'
 
 export function LessonNavigationClient({
@@ -14,7 +15,9 @@ export function LessonNavigationClient({
   module: string
   unit: string
 }) {
-  const isComplete = useProgressStore((s) => s.isComplete)
+  const localIsComplete = useProgressStore((s) => s.isComplete)
+  const serverCompleted = useCompletedLessons()
+  const isComplete = (lessonId: string) => localIsComplete(lessonId) || serverCompleted.has(lessonId)
 
   const nextLocked =
     frontmatter.next && !isComplete(frontmatter.lessonId) ? true : false

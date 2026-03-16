@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+import { useCompletedLessons } from '@/lib/progress/useCompletedLessons'
 import { useProgressStore } from '@/store/useProgressStore'
 
 export function MobileSidebar({
@@ -19,7 +20,9 @@ export function MobileSidebar({
   currentLesson: string
 }) {
   const [open, setOpen] = useState(false)
-  const isComplete = useProgressStore((s) => s.isComplete)
+  const localIsComplete = useProgressStore((s) => s.isComplete)
+  const serverCompleted = useCompletedLessons()
+  const isComplete = (lessonId: string) => localIsComplete(lessonId) || serverCompleted.has(lessonId)
 
   return (
     <div className="lg:hidden">

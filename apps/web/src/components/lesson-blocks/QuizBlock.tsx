@@ -157,7 +157,7 @@ export function QuizBlock({
 
         {submitted.passed ? (
           <div className="mt-4 rounded-xl border border-success/30 bg-success/10 p-4 text-sm text-success">
-            Lesson unlocked. (Progress saved locally for demo.)
+            Lesson unlocked. (If you’re logged in, progress is saved to your account.)
           </div>
         ) : (
           <button
