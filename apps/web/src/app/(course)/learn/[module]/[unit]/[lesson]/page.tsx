@@ -5,7 +5,7 @@ import { LessonHeader } from '@/components/lessons/LessonHeader'
 import { LessonToc } from '@/components/lessons/LessonToc'
 import { MobileSidebar } from '@/components/lessons/MobileSidebar'
 import { LessonNavigation } from '@/components/lessons/LessonNavigation'
-import { LessonSidebar } from '@/components/lessons/LessonSidebar'
+import { LessonSidebarClient } from '@/components/lessons/LessonSidebarClient'
 import { getLessonList, getModuleMeta, getUnitMeta } from '@/lib/content/course'
 import { mdxComponents } from '@/lib/mdx/components'
 import { getAllLessonPaths, getLessonContent } from '@/lib/mdx/loader'
@@ -28,10 +28,12 @@ export default async function LessonPage({ params }: LessonPageProps) {
 
   return (
     <div className="flex min-h-screen">
-      <LessonSidebar
-        current={{ module: params.module, unit: params.unit, lesson: params.lesson }}
+      <LessonSidebarClient
         title={sidebarTitle}
         lessons={lessons}
+        module={params.module}
+        unit={params.unit}
+        currentLesson={params.lesson}
       />
       <main className="flex-1 px-6 py-10">
         <div className="mx-auto flex w-full max-w-6xl gap-10">

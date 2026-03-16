@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+import { useProgressStore } from '@/store/useProgressStore'
+
 export function MobileSidebar({
   title,
   lessons,
@@ -17,6 +19,7 @@ export function MobileSidebar({
   currentLesson: string
 }) {
   const [open, setOpen] = useState(false)
+  const isComplete = useProgressStore((s) => s.isComplete)
 
   return (
     <div className="lg:hidden">
@@ -58,6 +61,10 @@ export function MobileSidebar({
             <div className="mt-6 space-y-1">
               {lessons.map((l) => {
                 const isActive = l.slug === currentLesson
+                const idx = lessons.findIndex((x) => x.slug === l.slug)
+                const prevLessonId = idx > 0 ? lessons[idx - 1]?.lessonId : null
+                const isLocked = prevLessonId ? !isComplete(prevLessonId) : false
+                const done = isComplete(l.lessonId)
                 return (
                   <Link
                     key={l.slug}
@@ -66,10 +73,26 @@ export function MobileSidebar({
                     className={
                       isActive
                         ? 'block rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-sm font-medium'
-                        : 'block rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-background-muted'
+                        : isLocked
+                          ? 'block cursor-not-allowed rounded-lg px-3 py-2 text-sm text-foreground/70 opacity-50'
+                          : 'block rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-background-muted'
                     }
+                    aria-disabled={isLocked}
+                    onClickCapture={(e) => {
+                      if (isLocked) {
+                        e.preventDefault()
+                        e.stopPropagation()
+                      }
+                    }}
                   >
-                    {l.lessonId} {l.title}
+                    <div className="flex items-center justify-between gap-3">
+                      <span>
+                        {l.lessonId} {l.title}
+                      </span>
+                      <span className="text-xs">
+                        {done ? <span className="text-success">✓</span> : isLocked ? '🔒' : null}
+                      </span>
+                    </div>
                   </Link>
                 )
               })}

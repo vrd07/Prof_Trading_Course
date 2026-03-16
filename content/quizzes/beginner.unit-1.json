@@ -1,0 +1,161 @@
+{
+  "passingScore": 4,
+  "lessons": {
+    "1.1": {
+      "lessonId": "1.1",
+      "questions": [
+        {
+          "questionKey": "1.1.q1",
+          "questionText": "The Forex market is best described as:",
+          "options": [
+            "A physical exchange located in New York",
+            "A decentralised, global, over-the-counter market",
+            "A government-controlled currency exchange system",
+            "A marketplace that only operates during US business hours"
+          ],
+          "correctIndex": 1,
+          "explanation": "Forex has no central exchange; it’s a global OTC network operating 24/5."
+        },
+        {
+          "questionKey": "1.1.q2",
+          "questionText": "Approximately how much is traded in Forex every day?",
+          "options": ["$250 billion", "$1.2 trillion", "$3.8 trillion", "$7.5 trillion"],
+          "correctIndex": 3,
+          "explanation": "Daily Forex volume is roughly $7.5T, the largest market on Earth."
+        },
+        {
+          "questionKey": "1.1.q3",
+          "questionText": "A trader who believes EUR/USD will fall would:",
+          "options": [
+            "Sell EUR/USD",
+            "Buy EUR/USD",
+            "Buy US Dollars on the stock market",
+            "Wait until EUR/USD rises before trading"
+          ],
+          "correctIndex": 0,
+          "explanation": "To profit from a fall, you short the pair: sell first, buy back lower."
+        },
+        {
+          "questionKey": "1.1.q4",
+          "questionText": "Which would most likely cause a currency to strengthen?",
+          "options": [
+            "A sharp rise in unemployment",
+            "Political instability and civil unrest",
+            "The central bank raising interest rates",
+            "A widening trade deficit"
+          ],
+          "correctIndex": 2,
+          "explanation": "Higher rates attract capital flows into that currency, increasing demand."
+        },
+        {
+          "questionKey": "1.1.q5",
+          "questionText": "Why do most retail Forex traders lose money (per the lesson)?",
+          "options": [
+            "The market is rigged against retail",
+            "Forex is impossible to trade profitably",
+            "Retail traders have less money than banks",
+            "Lack of education, structure, and emotional discipline"
+          ],
+          "correctIndex": 3,
+          "explanation": "The consistent failure is usually approach: no system, no risk plan, emotion-driven."
+        }
+      ]
+    },
+    "1.2": {
+      "lessonId": "1.2",
+      "questions": [
+        {
+          "questionKey": "1.2.q1",
+          "questionText": "Which participant sets the macro backdrop via interest-rate policy?",
+          "options": ["Commercial banks", "Hedge funds", "Central banks", "Retail traders"],
+          "correctIndex": 2,
+          "explanation": "Central banks drive rate policy and can move FX markets violently."
+        },
+        {
+          "questionKey": "1.2.q2",
+          "questionText": "A corporation converting overseas revenue back to home currency is:",
+          "options": ["Speculation", "Commercial / hedging flow", "Intervention", "Retail clustering"],
+          "correctIndex": 1,
+          "explanation": "Corporations trade FX mainly to hedge and settle real-world cash flows."
+        },
+        {
+          "questionKey": "1.2.q3",
+          "questionText": "A stop hunt is best described as:",
+          "options": [
+            "Retail traders targeting each other’s stops",
+            "A central bank volatility tool",
+            "A move that triggers clustered stops to provide liquidity for large orders",
+            "A broker canceling losing trades"
+          ],
+          "correctIndex": 2,
+          "explanation": "It’s a liquidity mechanic: stops are orders; triggering them creates fillable liquidity."
+        },
+        {
+          "questionKey": "1.2.q4",
+          "questionText": "Which broker type can take the opposite side of your trade (dealing desk)?",
+          "options": ["ECN", "STP", "Liquidity provider", "Market maker"],
+          "correctIndex": 3,
+          "explanation": "Market makers internalize your flow; ECN/STP route to external liquidity."
+        },
+        {
+          "questionKey": "1.2.q5",
+          "questionText": "Retail volume is roughly what share of total daily Forex volume?",
+          "options": ["25–30%", "15–20%", "10–15%", "Less than 5%"],
+          "correctIndex": 3,
+          "explanation": "Most volume is institutional; retail is small but highly predictable."
+        }
+      ]
+    },
+    "1.3": {
+      "lessonId": "1.3",
+      "questions": [
+        {
+          "questionKey": "1.3.q1",
+          "questionText": "In GBP/JPY, which is the base currency?",
+          "options": ["JPY", "GBP", "It depends on direction", "Whichever is stronger"],
+          "correctIndex": 1,
+          "explanation": "Base is always the left side of the slash."
+        },
+        {
+          "questionKey": "1.3.q2",
+          "questionText": "EUR/USD falls from 1.1200 to 1.0900. What happened?",
+          "options": [
+            "USD weakened vs EUR",
+            "Both lost value simultaneously",
+            "EUR weakened vs USD",
+            "The spread widened by 300 pips"
+          ],
+          "correctIndex": 2,
+          "explanation": "If the pair falls, the base (EUR) is getting cheaper in quote (USD)."
+        },
+        {
+          "questionKey": "1.3.q3",
+          "questionText": "Which is a minor (cross) pair?",
+          "options": ["EUR/USD", "USD/JPY", "USD/CHF", "EUR/GBP"],
+          "correctIndex": 3,
+          "explanation": "Crosses exclude USD."
+        },
+        {
+          "questionKey": "1.3.q4",
+          "questionText": "If EUR/USD is 1.0845 / 1.0848 and you want to SELL, you execute at:",
+          "options": ["1.0845 (BID)", "1.0848 (ASK)", "Midpoint", "Negotiated price"],
+          "correctIndex": 0,
+          "explanation": "Sell at BID, buy at ASK."
+        },
+        {
+          "questionKey": "1.3.q5",
+          "questionText": "Why are exotic pairs not recommended for beginners?",
+          "options": [
+            "They’re too simple",
+            "They’re institutional-only",
+            "They move too slowly",
+            "Wide spreads, lower liquidity, and higher event/political risk"
+          ],
+          "correctIndex": 3,
+          "explanation": "Cost + slippage + tail risk makes them unforgiving during learning."
+        }
+      ]
+    }
+  }
+}
+
