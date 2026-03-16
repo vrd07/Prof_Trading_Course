@@ -5,6 +5,7 @@ import matter from 'gray-matter'
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import { serialize } from 'next-mdx-remote/serialize'
+import { extractTocFromMdx, type TocItem } from './toc'
 
 export interface LessonFrontmatter {
   title: string
@@ -24,6 +25,7 @@ export interface LessonFrontmatter {
 export interface LessonContent {
   frontmatter: LessonFrontmatter
   mdxSource: string
+  toc: TocItem[]
 }
 
 export async function getLessonContent(moduleSlug: string, unitSlug: string, lessonSlug: string) {
@@ -39,6 +41,7 @@ export async function getLessonContent(moduleSlug: string, unitSlug: string, les
 
   const raw = await fs.readFile(filePath, 'utf8')
   const parsed = matter(raw)
+  const toc = extractTocFromMdx(parsed.content)
 
   const mdxSource = await serialize(parsed.content, {
     mdxOptions: {
@@ -54,7 +57,7 @@ export async function getLessonContent(moduleSlug: string, unitSlug: string, les
     },
   })
 
-  return { frontmatter: parsed.data as LessonFrontmatter, mdxSource }
+  return { frontmatter: parsed.data as LessonFrontmatter, mdxSource, toc }
 }
 
 export async function getAllLessonPaths() {

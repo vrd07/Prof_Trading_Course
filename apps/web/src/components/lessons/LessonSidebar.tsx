@@ -1,24 +1,13 @@
 import Link from 'next/link'
 
-const unit1Lessons = [
-  {
-    slug: '1.1-what-is-forex',
-    title: '1.1 What is Forex?',
-  },
-  {
-    slug: '1.2-who-are-the-players',
-    title: '1.2 Who Are the Players?',
-  },
-  {
-    slug: '1.3-how-currency-pairs-work',
-    title: '1.3 How Currency Pairs Work',
-  },
-]
-
 export function LessonSidebar({
   current,
+  title,
+  lessons,
 }: {
   current: { module: string; unit: string; lesson: string }
+  title: string
+  lessons: Array<{ slug: string; title: string; lessonId: string }>
 }) {
   return (
     <aside className="hidden w-[280px] flex-shrink-0 border-r border-border bg-background-subtle lg:block">
@@ -28,10 +17,10 @@ export function LessonSidebar({
         </Link>
         <div className="mt-6">
           <div className="text-xs font-semibold uppercase tracking-wider text-foreground/60">
-            Beginner · Unit 1
+            {title}
           </div>
           <div className="mt-3 space-y-1">
-            {unit1Lessons.map((l) => {
+            {lessons.map((l) => {
               const isActive = current.lesson === l.slug
               return (
                 <Link
@@ -43,7 +32,7 @@ export function LessonSidebar({
                       : 'block rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-background-muted'
                   }
                 >
-                  {l.title}
+                  {l.lessonId} {l.title}
                 </Link>
               )
             })}
