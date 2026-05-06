@@ -81,7 +81,7 @@ Week 4: Progress + Quiz (no UI polish)
 ```
 
 ### Phase 1 Definition of Done
-- [ ] User can sign up, log in, log out
+- [x] User can sign up, log in, log out
 - [ ] User can navigate to any free lesson
 - [ ] Lesson 1.1 renders with correct content
 - [ ] User can complete a quiz and have progress saved
